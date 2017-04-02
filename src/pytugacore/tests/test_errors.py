@@ -17,7 +17,7 @@ para cada x de 1 aa 1:
     pass
 
 
-### create invalid python code (syntax error not raised by transpiler)
+### create invalid python code (syntax error not raised by transpyler)
 a b
 
 """.split('##')[1:]

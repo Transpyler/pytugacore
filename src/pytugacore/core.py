@@ -192,6 +192,8 @@ def tokenize(src):
 #
 # Pytuga introspections
 #
+
+
 def _filtering_out(names):
     """
     Remove name from global _names variable
@@ -218,7 +220,7 @@ constants = _filtering_out(
 py_exceptions = [
     name for (name, value) in vars(_builtins).items()
     if isinstance(value, type) and issubclass(value, Exception)
-    ]
+]
 exceptions = _filtering_out(
     [name for (name, value) in _names.items()
      if isinstance(value, type) and issubclass(value, Exception)]
@@ -228,7 +230,7 @@ exceptions = _filtering_out(
 py_types = [
     name for (name, value) in vars(_builtins).items()
     if isinstance(value, type) and not issubclass(value, Exception)
-    ]
+]
 types = _filtering_out(
     [name for (name, value) in _names.items() if isinstance(value, type)]
 )
@@ -237,7 +239,7 @@ types = _filtering_out(
 py_functions = py_types = [
     name for (name, value) in vars(_builtins).items()
     if name not in py_types and name not in py_exceptions
-    ]
+]
 functions = _filtering_out(
     [name for (name, value) in _names.items() if callable(value)]
 )

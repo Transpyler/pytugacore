@@ -204,6 +204,7 @@ else:
 '''
     assert pytg(ptsrc) == py(pysrc)
 
+
 def test_se__ou_entao_se__senao():
     ptsrc = '''
 se x < 1 então:

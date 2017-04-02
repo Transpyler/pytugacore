@@ -81,7 +81,8 @@ class PytugaLexer(Lexer):
             if match[0] != 'de':
                 continue
 
-            # Send tokens for the beginning of the equivalent in range(...) test
+            # Send tokens for the beginning of the equivalent in range(...)
+            # test
             start = tokens[idx].start
             starttokens = Token.from_strings(start, 'in', 'range', '(')
             del tokens[idx]

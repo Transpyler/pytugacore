@@ -1,12 +1,12 @@
-'''
+"""
 Textos (strings)
 ================
 
 Funções para processamento de texto.
-'''
+"""
 
-from transpyler.utils import synonyms
 # TODO: terminar as traduções de funções e escolher ordem dos argumentos
+from transpyler.utils import synonyms
 
 
 #
@@ -14,37 +14,33 @@ from transpyler.utils import synonyms
 #
 @synonyms('concatene')
 def concatenar(*args):
-    '''
+    """
     Converte os argumentos para texto e concatena o resultado
 
-    Examples
-    --------
-
-    >>> concatenar('x = ', 2)
-    'x = 2'
-    '''
+    Examples:
+        >>> concatenar('x = ', 2)
+        'x = 2'
+    """
 
     return concatenar_lista(args)
 
 
 @synonyms('concatene_lista')
 def concatenar_lista(lista):
-    '''
+    """
     Converte os argumentos da lista em texto e concatena o resultado.
 
-    Examples
-    --------
-
-    >>> concatenar_lista(['a', 'b', 'c', 1, 2, 3])
-    'abc123'
-    '''
+    Examples:
+        >>> concatenar_lista(['a', 'b', 'c', 1, 2, 3])
+        'abc123'
+    """
 
     return ''.join(map(str, lista))
 
 
 @synonyms('una_valores')
 def unir_valores(separador, *args):
-    '''
+    """
     Semelhante à concatenar(), mas une os valores pelo texto separador
     especificado
 
@@ -53,14 +49,14 @@ def unir_valores(separador, *args):
 
     >>> unir_valores(', ', 1, 2, 3)
     '1, 2, 3'
-    '''
+    """
 
     return unir_lista(separador, args)
 
 
 @synonyms('una_lista')
 def unir_lista(separador, lista):
-    '''
+    """
     Semelhante à concatenar_lista(), mas une os valores pelo texto separador
     especificado
 
@@ -69,7 +65,7 @@ def unir_lista(separador, lista):
 
     >>> unir_lista(', ', [1, 2, 3])
     '1, 2, 3'
-    '''
+    """
 
     return str(separador).join(map(str, lista))
 
@@ -78,6 +74,8 @@ particionar = particione = str.partition
 particionar_direita = particione_direita = str.rpartition
 separar_texto = separe_texto = str.split
 separar_em_linhas = separe_em_linhas = str.splitlines
+
+
 # rsplit?
 
 
@@ -86,7 +84,7 @@ separar_em_linhas = separe_em_linhas = str.splitlines
 #
 @synonyms('formate')
 def formatar(texto, *args, **kwds):
-    '''
+    """
     Formata o texto inserindo os parâmetros dados nas posições coringa.
 
     Existem duas sintaxes diferentes para a formatação de texto. A primeira,
@@ -100,7 +98,7 @@ def formatar(texto, *args, **kwds):
 
     >>> formatar('{0} = {1}', 42, 42)
     '42 = 42'
-    '''
+    """
 
     try:
         return texto % args
@@ -110,7 +108,7 @@ def formatar(texto, *args, **kwds):
 
 @synonyms('substitua')
 def substituir(texto, valor, substituição):
-    '''
+    """
     Substitui no ``texto`` todas as ocorrências de ``valor`` pela
     ``substituição`` dada.
 
@@ -119,9 +117,10 @@ def substituir(texto, valor, substituição):
 
     >>> substituir('Olá, pessoal!', 'pessoal', 'mundo')
     'Olá, mundo!'
-    '''
+    """
 
     return str(texto).replace(valor, substituição)
+
 
 # maketrans?
 # translate?
@@ -133,7 +132,7 @@ def substituir(texto, valor, substituição):
 # Maiúsculas e minúsculas
 #
 def maiúsculas(texto):
-    '''
+    """
     Converte um texto para letras maiúsculas
 
     Examples
@@ -141,22 +140,23 @@ def maiúsculas(texto):
 
     >>> maiúsculas('olá, mundo!')
     'OLÁ, MUNDO!'
-    '''
+    """
 
     return texto.upper()
 
 
 def minúsculas(texto):
-    '''Converte um texto para letras minúsculas
+    """Converte um texto para letras minúsculas
 
     Examples
     ---------
 
     >>> minúsculas('OLÁ, MUNDO!')
     'olá, mundo!'
-    '''
+    """
 
     return texto.lower()
+
 
 título = str.title
 capitalizar = capitalize = str.capitalize
@@ -201,8 +201,3 @@ contar_em_texto = conte_em_texto = str.count
 procurar_em_texto = procure_em_texto = str.find
 procurar_em_texto_direita = procure_em_texto_direita = str.rfind
 # index?, rindex?
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()

@@ -129,7 +129,7 @@ def caractere(x):
     """
     Retorna um texto Unicode associado a um ordinal (Unicode é um padrão de
     representãção de qualquer caractere de um sistema de escrita).
-    
+
     Examples
     --------
 
@@ -168,7 +168,7 @@ def enumerar(x):
 
     Examples
     --------
-    
+
     >>> música = ['uni', 'duni', 'te']
     >>> listar(enumerar(música))
     [(0, 'uni'), (1, 'duni'), (2, 'te')]
@@ -222,7 +222,7 @@ def lista(seq=None):
 def listar(seq):
     """
     Retorna uma lista com todos os elementos da sequência fornecida.
-    
+
     Examples
     --------
 
@@ -237,10 +237,10 @@ def listar(seq):
 def listar_invertido(seq):
     """
     Lista os elementos da sequência fornecida na ordem inversa.
-    
+
     Examples
     --------
-    
+
     >>> música = ['uni', 'duni', 'te']
     >>> listar_invertido(música)
     ['te', 'duni', 'uni']
@@ -252,10 +252,10 @@ def listar_invertido(seq):
 def ordenado(seq, chave=None):
     """
     Retorna uma cópia da sequência fornecida com os elementos ordenados.
-    
+
     Examples
     --------
-    
+
     >>> sorted([5, 2, 3, 1, 4])
     [1, 2, 3, 4, 5]
     """
@@ -266,16 +266,16 @@ def ordenado(seq, chave=None):
 def texto(obj, codificacao=None):
     """
     Cria um novo texto a partir do objeto fornecido.
-    
+
     Examples
     --------
 
     >>> texto(42)
     "42"
     """
-    if codificação is None:
+    if codificacao is None:
         return str(obj)
-    return str(obj, encoding=codificação)
+    return str(obj, encoding=codificacao)
 
 
 #
@@ -306,11 +306,12 @@ def ajuda(*args):
     `ajuda(binário)` para obter ajuda sobre um tópico específico.
     """
 
-    #TODO: criar função ajuda interativa em português
+    # TODO: criar função ajuda interativa em português
     if not args:
         return help()
     else:
         return help(*args)
+
 
 #
 # Singleton objects
@@ -341,4 +342,5 @@ Complexo = complex
 
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()

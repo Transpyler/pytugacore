@@ -7,8 +7,6 @@ def test_namespace():
     ns = tugalib_namespace(forbidden=False)
 
 
-
-
 def test_transpile():
     py = transpile('enquanto verdadeiro ou falso: prosseguir')
     assert py == 'while True or False: pass'
