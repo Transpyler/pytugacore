@@ -1,8 +1,8 @@
-.. .. image:: https://travis-ci.org/*github_repository*.svg?branch=master
-    :target: https://travis-ci.org/*github_repository*
+.. image:: https://travis-ci.org/transpyler/pytugacore.svg?branch=master
+  :target: https://travis-ci.org/transpyler/pytugacore
 
-.. .. image:: https://coveralls.io/repos/github/*github_repository*/badge.svg?branch=master
-    :target: https://coveralls.io/github/*github_repository*?branch=master
+.. image:: https://codecov.io/gh/Transpyler/pytugacore/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/Transpyler/pytugacore
 
 
 Pytuga-core implements the core features of Pytuguês language without a
