@@ -16,6 +16,13 @@ para cada x de 1 em 1:
 para cada x de 1 aa 1:
     pass
 
+##
+4 vezes:
+    ...
+
+##
+repetir 4:
+    ...
 
 ### create invalid python code (syntax error not raised by transpyler)
 a b

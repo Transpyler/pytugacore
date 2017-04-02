@@ -360,7 +360,3 @@ def test_full_conditional_command():
     ptsrc = 'se x então faça:\n    pass'
     pysrc = 'if x:\n   pass'
     assert pytg(ptsrc) == py(pysrc)
-
-
-if __name__ == '__main__':
-    pytest.main('test_language.py')

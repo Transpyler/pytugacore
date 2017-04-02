@@ -35,10 +35,6 @@ class PytugaLexer(Lexer):
         matches = [('repetir',), ('repita',), ('vezes',), (NEWLINE,)]
         iterator = token.token_find(tokens, matches)
         for idx, match, start, end in iterator:
-            # Waits for a repetir/repita token to start
-            if match[0] not in ['repetir', 'repita']:
-                continue
-
             # Send tokens to the beginning of the equivalent "for" loop
             starttokens = Token.from_strings(
                 tokens[idx].start, 'for', '___', 'in', 'range', '('
@@ -47,7 +43,10 @@ class PytugaLexer(Lexer):
             token.insert_tokens_at(tokens, idx, starttokens, end=end)
 
             # Matches the 'vezes' token
-            idx, match, start, end = next(iterator)
+            try:
+                idx, match, start, end = next(iterator)
+            except StopIteration:
+                match = [None]
 
             if match[0] != 'vezes':
                 raise SyntaxError(
